@@ -15,16 +15,52 @@
 
 <body>
     <header>
-        <div class="gutter-right logo">
-            <img src="./assets/big-logo.png" />
-        </div>
+        Logout
+        <a href="../app.js">
+            Logout
+        </a>
     </header>
     <main>
         <section class="main-section">
-            <img class="main-logo" src="./assets/alchemy-logo.png" />
-            <h2>
-                Poll Tracker
-            </h2>
+            <h2> Poll Tracker </h2>
+            <div class ="poll-form-container">
+                <form class="poll-form">
+                    <label>
+                        Question:
+                        <input id="question-input">
+                    </label>
+                    <label>
+                        Option 1:
+                        <input id="option-1-input">
+                    </label>
+                    <label>
+                        Option 2:
+                        <input id="option-2-input">
+                    </label>
+                    <button>Submit Poll</button>
+                </form>
+            </div>
+            <div class="current-poll-container">
+                <2> Current Poll </2>
+                <div class="current-poll">
+                    <h1>Default Question</h1>
+                    <div class="option-1-stuff">
+                        <p class="option-1-title"></p>
+                        <p class="option-1-votes"></p>
+                        <button id="option1-add">+</button>
+						<button id="option1-sub">-</button>
+                    </div>
+                    <div class="option-2-stuff">
+                        <p class="option-2-title"></p>
+                        <p class="option-2-votes"></p>
+                        <button id="option2-add">+</button>
+						<button id="option2-sub">-</button>
+                    </div>
+            </div>
+            <div class="past-polls-container">
+            <h2> Past Polls </h2>
+            <div class="past-polls"></div>
+            </div>
 
 
         </section>
