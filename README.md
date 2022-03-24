@@ -23,7 +23,7 @@ Additional considerations:
   - What arrays might you need?
   - What needs to live in a persistence layer?
 - Is there some state we need to initialize?
-- Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be resused?)
+- Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
 
 
 ## MY PLAN
@@ -32,6 +32,21 @@ Additional considerations:
 2.) Create Wire frame.
 3.) Create poll folder with poll html and js - add .. to all hrefs in html.
 4.) HTML SETUP
+1.) Div - current poll
+  A. H1 for current question
+  B. Div - display option1 and option 1 votes
+  C. Div - display option2 and option 2 votes
+2.) Voting buttons for option 1 (+/-) and voting buttons for option 2 (+/-)
+3.) Publish poll button
+4.) Div - current poll form
+ A. Input for question within label tag
+ B. Label inputs for option1 and option2
+ C. Submit button
+
+5.) Section for past polls
+ A. H1 for question
+ B. Div - display option1 and option 1 votes
+ C. Div - display option2 and option 2 votes
 5.) STATE
   A. Local - current poll
   B. Supabase - past polls
