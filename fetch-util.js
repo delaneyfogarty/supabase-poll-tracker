@@ -29,7 +29,7 @@ export async function signup(email, password) {
   return data.user;
 }
 
-export async function singIn(someEmail, somePassword) {
+export async function signIn(someEmail, somePassword) {
   const data = await client.auth.signIn({
     email: someEmail,
     password: somePassword,
