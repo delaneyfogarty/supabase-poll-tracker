@@ -12,10 +12,10 @@ export async function getAllPolls() {
   return data.data;
 }
 
-export async function createPoll() {
+export async function createPoll(question, option1, option2, score1, score2) {
   const data = await client
     .from('poll_tracker')
-    .insert({ question: 'question', option_1:'Some Value', option_2:'Some Value', score_1: 0, score_2: 0 });
+    .insert({ question: question, option_1: option1, option_2: option2, score_1: score1, score_2: score2 });
 
   return data.data;
 }
