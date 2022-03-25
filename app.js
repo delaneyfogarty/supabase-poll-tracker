@@ -1,4 +1,4 @@
-import { signup, signIn, getUser, redirectIfNotLoggedIn } from './fetch-util.js';
+import { signUp, signIn, getUser, redirectIfNotLoggedIn } from './fetch-util.js';
 
 const signUpForm = document.querySelector('.sign-up');
 const signInForm = document.querySelector('.sign-in');
@@ -10,12 +10,12 @@ signUpForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const data = new FormData(signUpForm);
 
-  await signup(data.get('sign-up-email'), data.get('sign-up-password'));
+  await signUp(data.get('sign-up-email'), data.get('sign-up-password'));
 
   const user = getUser();
 
   if (user) {
-    window.location.href = './poll.js';
+    window.location.href = './poll';
   }
 
 });
@@ -24,12 +24,12 @@ signInForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const data = new FormData(signInForm);
 
-  await signIn(data.get('sign-in-email'), data.get('sign-in-password'));
+  await signIn(data.get('email'), data.get('password'));
 
   const user = getUser();
 
   if (user) {
-    window.location.href = './poll.js';
+    window.location.href = './poll';
   }
 
 });

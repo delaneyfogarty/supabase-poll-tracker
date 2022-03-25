@@ -9,21 +9,21 @@ export async function getAllPolls() {
     .from('poll_tracker')
     .select('*');
 
-  return data.data;
+  return data.body;
 }
 
-export async function createPoll(question, option1, option2, score1, score2) {
+export async function createPoll(pastPoll) {
   const data = await client
     .from('poll_tracker')
-    .insert({ question: question, option_1: option1, option_2: option2, score_1: score1, score_2: score2 });
+    .insert(pastPoll);
 
-  return data.data;
+    return data.body;
 }
 
-export async function signup(email, password) {
-  const data = await client.auth.signup({
-    email: email,
-    password: password,
+export async function signUp(someEmail, somePassword) {
+  const data = await client.auth.signUp({
+    email: someEmail,
+    password: somePassword,
   });
 
   return data.user;
@@ -39,7 +39,7 @@ export async function signIn(someEmail, somePassword) {
 }
 
 export async function getUser() {
-  return client.auth.user();
+  return client.auth.session();
 
 }
 

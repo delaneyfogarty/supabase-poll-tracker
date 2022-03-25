@@ -15,26 +15,24 @@
 
 <body>
     <header>
-        <a href="../app.js">
-            Logout
-        </a>
+       <button class="logout">Log Out</button>
     </header>
     <main>
         <section class="main-section">
             <h2> Poll Tracker </h2>
             <div class ="poll-form-container">
-                <form class="poll-form">
+                <form>
                     <label>
                         Question:
-                        <input id="question-input">
+                        <input name="question-input">
                     </label>
                     <label>
                         Option 1:
-                        <input id="option-1-input">
+                        <input name="option-1-input">
                     </label>
                     <label>
                         Option 2:
-                        <input id="option-2-input">
+                        <input name="option-2-input">
                     </label>
                     <button class="submit-button">Submit Poll</button>
                 </form>
@@ -43,6 +41,7 @@
                 <h2> Current Poll </h2>
                 <div class="current-poll">
                     <h1>Default Question</h1>
+                    <div id="vote-buttons-container">
                     <div class="option-1-stuff">
                         <p class="option-1-title"></p>
                         <p class="option-1-votes"></p>
@@ -56,6 +55,7 @@
 						<button id="option2-sub">-</button>
                     </div>
                     <button id="finish-poll-button">Finish Poll</button>
+                </div>
             </div>
             <div class="past-polls-container">
             <h2> Past Polls </h2>
