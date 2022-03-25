@@ -9,8 +9,8 @@ redirectIfNotLoggedIn();
 signUpForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const data = new FormData(signUpForm);
-
-  await signUp(data.get('sign-up-email'), data.get('sign-up-password'));
+  // console.log(data.get('email'), data.get('password'));
+  await signUp(data.get('email'), data.get('password'));
 
   const user = getUser();
 

@@ -1,13 +1,8 @@
 import { createPoll, getAllPolls, logout } from '../fetch-util.js';
 import { renderPoll } from '../render-utils.js';
 
-const currentPollContainer = document.querySelector('.poll-form-container');
+const currentPollContainer = document.querySelector('.current-poll-container');
 const form = document.querySelector('form');
-// const questionInputEl = document.querySelector('question-input');
-// const option1InputEl = document.querySelector('option-1-input');
-// const option2InputEl = document.querySelector('option-2-input');
-const option1VotesEl = document.querySelector('.option-1-votes');
-const option2VotesEl = document.querySelector('.option-2-votes');
 const option1AddButton = document.getElementById('option1-add');
 const option1SubButton = document.getElementById('option1-sub');
 const option2AddButton = document.getElementById('option2-add');
@@ -40,22 +35,22 @@ form.addEventListener('submit', (e) => {
 
 option1AddButton.addEventListener('click', () => {
   score1++;
-  option1VotesEl.textContent = score1;
+  displayCurrentPoll();
 });
 
 option2AddButton.addEventListener('click', () => {
   score2++;
-  option2VotesEl.textContent = score2;
+  displayCurrentPoll();
 });
 
 option1SubButton.addEventListener('click', () => {
   score1--;
-  option1VotesEl.textContent = score1;
+  displayCurrentPoll();
 });
 
 option2SubButton.addEventListener('click', () => {
   score2--;
-  option2VotesEl.textContent = score2;
+  displayCurrentPoll();
 });
 
 finishPollButton.addEventListener('click', async () => {
@@ -67,7 +62,7 @@ finishPollButton.addEventListener('click', async () => {
     score_2: score2,
   };
   await createPoll(pastPoll);
-  await fetchAndDisplayAllPolls();
+  await fetchAndDisplayPolls();
 
   currentQuestion = '',
   option1 = '',
@@ -75,7 +70,8 @@ finishPollButton.addEventListener('click', async () => {
   score1 = 0,
   score2 = 0;
 
-  displayCurrentPoll;
+  //pastPollsEl.append(pastPoll);
+  displayCurrentPoll();
 
 });
 
@@ -116,4 +112,8 @@ logoutButton.addEventListener('click', async () => {
   await logout();
 
   window.location.href = '../';
+});
+
+window.addEventListener('load', async () => {
+  await fetchAndDisplayPolls();
 });
