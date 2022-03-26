@@ -17,7 +17,7 @@ export async function createPoll(pastPoll) {
     .from('poll_tracker')
     .insert(pastPoll);
 
-    return data.body;
+  return data.body;
 }
 
 export async function signUp(someEmail, somePassword) {

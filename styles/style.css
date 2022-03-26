@@ -2,11 +2,11 @@
 body {
     /* feel free to update these css variables for a quick theme */
 
-    --color1: white;
-    --color2: white;
-    --color3: white;
-    --color4: white;
-    --color5: white;
+    --color1: transparent;
+    --color2: transparent;
+    --color3: transparent;
+    --color4: transparent;
+    --color5: transparent;
 
     /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
 
@@ -28,7 +28,8 @@ body {
     --footer-height: 25px;
 
     font-family: 'Titillium Web', sans-serif;
-    background-color: var(--color2);
+
+
 }
 
 main {
@@ -58,7 +59,6 @@ header {
     justify-content: flex-end;
     background-color: var(--color3);
     height: var(--header-height);
-    box-shadow: var(--shadow);
 }
 
 
@@ -100,4 +100,90 @@ footer {
     display: flex;
     flex-direction: column;
     padding: 30px;
+}
+
+.login-page {
+    background-color: hotpink;
+    background-image: url(/assets/bestbois.png);
+    background-blend-mode: multiply;
+    background-repeat: repeat;
+}
+
+.login-page header {
+    background-color: transparent;
+}
+
+.login-page footer {
+    background-color: transparent;
+}
+
+.login-page section {
+    background-color: black;
+    box-shadow: 12px 5px 15px 5px rgb(110, 178, 218);
+    border: transparent;
+
+}
+
+.login-page label {
+    color: white;
+}
+.login-page h2 {
+    color: white;
+}
+
+.poll-form-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.past-polls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 45px;
+    background-color: black;
+    box-shadow: 12px 5px 15px 5px rgb(110, 178, 218);
+    border: transparent;
+    color: white;
+}
+
+#pp {
+    text-align: center;
+
+}
+
+#vote-buttons-container {
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
+
+.option-1-stuff {
+    padding: 100px;
+}
+
+.finish {
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+
+}
+
+.current-poll-container {
+    display: flex;
+
+}
+
+.poll {
+    background-color: hotpink;
+    background-image: url(/assets/fur.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
 }
