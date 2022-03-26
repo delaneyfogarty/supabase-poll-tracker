@@ -10,7 +10,7 @@ const option2SubButton = document.getElementById('option2-sub');
 const finishPollButton = document.getElementById('finish-poll-button');
 const pastPollsEl = document.querySelector('.past-polls');
 const logoutButton = document.querySelector('.logout');
-const voteButtons = document.querySelector('.vote-buttons-container');
+// const voteButtons = document.querySelector('.vote-buttons-container');
 
 let currentQuestion = '';
 let option1 = '';
